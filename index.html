@@ -323,5 +323,20 @@ document.getElementById("measure-btn").addEventListener("click", function() {
   document.getElementById("measure-panel").classList.toggle("open");
 });
 </script>
+  ...
+</section>
+
+<!-- TEMPATKAN SCRIPT DI SINI -->
+<script>
+  const btn = document.getElementById("measure-btn");
+  const panel = document.getElementById("measure-panel");
+
+  btn.addEventListener("click", () => {
+    panel.style.display = (panel.style.display === "block") ? "none" : "block";
+  });
+</script>
+
+</body>
+</html>
 </body>
 </html>
