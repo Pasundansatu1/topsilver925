@@ -45,7 +45,63 @@
        Custom Nama • Cincin Tunangan • Kalung • Gelang • Handmade Artisan
     </p>
 </header>
+<!-- Floating Measure Button -->
+<div id="measure-btn">Panduan Ukur 📏</div>
 
+<!-- Panel Panduan Ukuran -->
+<div id="measure-panel">
+  <h3>Panduan Ukuran</h3>
+
+  <p><b>Cara Ukur Cincin:</b><br>
+  Gunakan cincin yang biasa dipakai → ukur <u>diameter bagian dalam</u> dengan penggaris.</p>
+
+  <p><b>Cara Ukur Gelang:</b><br>
+  Ukur lingkar pergelangan tangan memakai benang/lilit kawat kecil → lalu ukur panjangnya.</p>
+
+  <p><b>Cara Ukur Kalung:</b><br>
+  Sesuaikan panjang kalung favorit → 45cm (pendek), 50cm (sedang), 55cm (panjang).</p>
+
+  <p><b>Cara Ukur Anting:</b><br>
+  Tentukan diameter lingkar yang nyaman saat dipakai.</p>
+
+  <p><b>Ongkir:</b><br>
+  JNE / JNT / POS — mengikuti kota tujuan.</p>
+</div>
+
+<style>
+#measure-btn {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  background: #222;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 9999;
+}
+#measure-panel {
+  position: fixed;
+  right: 15px;
+  bottom: 60px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  width: 240px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: none;
+  z-index: 9999;
+}
+</style>
+
+<script>
+document.getElementById("measure-btn").onclick = function(){
+  var panel = document.getElementById("measure-panel");
+  panel.style.display = panel.style.display === "block" ? "none" : "block";
+}
+</script>
 <a href="https://wa.me/628132022201" class="button lang"
    data-id="Chat via WhatsApp" data-en="Chat via WhatsApp">
    Chat via WhatsApp
