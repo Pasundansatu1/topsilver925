@@ -109,6 +109,118 @@ enBtn.onclick = () => setLanguage("en");
 
 setLanguage(localStorage.getItem("site-lang") || "id");
 </script>
+<!-- AI Assistant Floating Button -->
+<style>
+#ai-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.35);
+    transition: 0.2s;
+}
+#ai-btn:hover { transform: scale(1.08); }
 
+#ai-box {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 290px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0px 6px 24px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 9999;
+    font-family: sans-serif;
+}
+#ai-box button {
+    width: 100%;
+    background: #000;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#ai-box button:hover { opacity: 0.88; }
+</style>
+
+<div id="ai-btn">AI Assist 🤖</div>
+
+<div id="ai-box">
+    <p><b>Halo! Ada yang bisa dibantu? 😊</b></p>
+    <button onclick="sendAI('ring')">Cara Ukur Cincin</button>
+    <button onclick="sendAI('bracelet')">Cara Ukur Gelang</button>
+    <button onclick="sendAI('necklace')">Cara Ukur Kalung</button>
+    <button onclick="sendAI('earring')">Cara Ukur Anting</button>
+    <button onclick="sendAI('shipping')">Info Harga Pengiriman</button>
+</div>
+
+<script>
+document.getElementById("ai-btn").onclick = function(){
+    const box = document.getElementById("ai-box");
+    box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+};
+
+function sendAI(type){
+    const reply = {
+        ring: `Cara ukur cincin:
+1. Siapkan tali / kertas kecil.
+2. Lingkarkan pada jari yang diinginkan.
+3. Tandai titik pertemuan.
+4. Ukur panjangnya dengan penggaris (mm).
+5. Kirim hasilnya ke kami untuk konversi ukuran.
+
+In English:
+How to measure ring size:
+1. Wrap thin paper around the finger.
+2. Mark the meeting point.
+3. Measure length in mm.
+4. Send result to us.`,
+
+        bracelet: `Cara ukur gelang:
+Ukur lingkar pergelangan tangan menggunakan kertas / pita ukur.
+Tambahkan 1–2 cm untuk kenyamanan.
+
+In English:
+Measure wrist circumference and +1–2 cm for comfort.`,
+
+        necklace: `Cara pilih panjang kalung:
+40cm = pendek (leher)
+45–50cm = dada atas
+55–60cm = dada tengah
+
+In English:
+40cm = short
+45–50cm = mid
+55–60cm = long style.`,
+
+        earring: `Cara pilih ukuran anting:
+Tentukan diameter berdasarkan bentuk wajah & kenyamanan.
+Untuk daily wear direkomendasikan 8–14mm.
+
+In English:
+Choose diameter based on comfort. Daily use: 8–14mm.`,
+
+        shipping: `Estimasi Ongkir:
+• Indonesia (JNE / J&T / POS): 8rb – 30rb tergantung kota.
+• Internasional (EMS / DHL): 150rb – 450rb tergantung negara.
+
+In English:
+Domestic shipping: 8K–30K.
+International: 150K–450K.`
+    };
+
+    window.open("https://wa.me/628132022201?text=" + encodeURIComponent(reply[type]), "_blank");
+}
+</script>
 </body>
 </html>
