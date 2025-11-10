@@ -240,7 +240,22 @@ document.getElementById("ai-assistant-btn").onclick = function(){
 }
 </style>
 
+<script>
+document.getElementById("ai-assistant-btn").onclick = function(){
+    const box = document.getElementById("ai-assistant-box");
+    box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+};
 
+function sendAI(type){
+    const preset = {
+        ring: "Halo! Saya ingin konsultasi ukuran cincin.",
+        bracelet: "Halo! Saya ingin tanya cara menentukan ukuran gelang.",
+        shipping: "Halo! Saya ingin tanya estimasi ongkir.",
+        custom: "Halo! Saya ingin konsultasi custom desain perhiasan."
+    };
+    window.open("https://wa.me/628132022201?text=" + encodeURIComponent(preset[type]), "_blank");
+}
+</script>
 
 
 </body>
