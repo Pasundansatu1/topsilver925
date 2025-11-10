@@ -1,340 +1,87 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-  
-</head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Top Silver 925</title>
-<style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; color: #222; }
-    header img { width: 180px; margin-top: 20px; }
-    .button { display: inline-block; background: black; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; margin-top: 10px; }
-    section { padding: 35px 20px; text-align: center; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Silver 925</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+      color: #222;
+    }header {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
 
-    .language-switch button { padding: 6px 14px; margin: 4px; border-radius: 6px; border: 1px solid #ccc; }
+section {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
 
-    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 20px; }
-    .gallery div { background: #eee; padding: 35px 0; border-radius: 10px; color: #777; font-size: 14px; }
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
 
-    /* Chat Bubble */
-    #chatBubble {
-      position: fixed; bottom: 25px; right: 25px;
-      background: #000; color: #fff; border-radius: 50%;
-      width: 55px; height: 55px; display: flex; align-items: center;
-      justify-content: center; font-size: 26px; cursor: pointer;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-    }
-    #chatBox {
-      position: fixed; bottom: 90px; right: 25px; width: 260px;
-      background: white; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-      padding: 12px; display: none; text-align: left;
-    }
-    #chatBox textarea { width: 100%; height: 60px; border-radius: 6px; padding: 6px; border: 1px solid #ccc; }
-    #chatBox button { margin-top: 6px; width: 100%; padding: 8px; background: black; color: white; border: none; border-radius: 6px; }
-
-</style>
-</head>
-<body>
-
-<header>
-    <img src="site.png" alt="Top Silver Logo">
-    <h1 class="lang" data-id="Top Silver 925" data-en="Top Silver 925">Top Silver 925</h1>
-    <p class="lang" data-id="Custom Nama • Cincin Tunangan • Kalung • Gelang • Handmade Artisan"
-       data-en="Custom Name • Engagement Rings • Necklaces • Bracelets • Handmade Artisan">
-       Custom Nama • Cincin Tunangan • Kalung • Gelang • Handmade Artisan
-    </p>
-</header>
-<!-- Floating Measure Button -->
-<div id="measure-btn">Panduan Ukur 📏</div>
-
-<!-- Panel Panduan Ukuran -->
-<div id="measure-panel">
-  <h3>Panduan Ukuran</h3>
-
-  <p><b>Cara Ukur Cincin:</b><br>
-  Gunakan cincin yang biasa dipakai → ukur <u>diameter bagian dalam</u> dengan penggaris.</p>
-
-  <p><b>Cara Ukur Gelang:</b><br>
-  Ukur lingkar pergelangan tangan memakai benang/lilit kawat kecil → lalu ukur panjangnya.</p>
-
-  <p><b>Cara Ukur Kalung:</b><br>
-  Sesuaikan panjang kalung favorit → 45cm (pendek), 50cm (sedang), 55cm (panjang).</p>
-
-  <p><b>Cara Ukur Anting:</b><br>
-  Tentukan diameter lingkar yang nyaman saat dipakai.</p>
-
-  <p><b>Ongkir:</b><br>
-  JNE / JNT / POS — mengikuti kota tujuan.</p>
-</div>
-
-<style>
 #measure-btn {
   position: fixed;
   right: 15px;
   bottom: 15px;
   background: #222;
   color: #fff;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 14px;
+  border-radius: 30px;
   font-size: 14px;
   cursor: pointer;
   z-index: 9999;
 }
+
 #measure-panel {
+  display: none;
   position: fixed;
   right: 15px;
   bottom: 60px;
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   padding: 12px;
-  width: 240px;
-  border-radius: 6px;
-  font-size: 13px;
-  display: none;
+  border-radius: 8px;
+  width: 260px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
   z-index: 9999;
 }
-</style>
 
-<script>
-document.getElementById("measure-btn").onclick = function(){
-  var panel = document.getElementById("measure-panel");
-  panel.style.display = panel.style.display === "block" ? "none" : "block";
-}
-</script>
-<a href="https://wa.me/628132022201" class="button lang"
-   data-id="Chat via WhatsApp" data-en="Chat via WhatsApp">
-   Chat via WhatsApp
-</a>
-
-<div class="language-switch">
-    <button id="idBtn">🇮🇩 ID</button>
-    <button id="enBtn">🇺🇸 EN</button>
-</div>
-
-<section>
-<h2 class="lang" data-id="Tentang Kami" data-en="About Us">Tentang Kami</h2>
-<p class="lang"
-   data-id="Top Silver 925 adalah pengrajin perhiasan perak asli di Bandung sejak 2010, spesialis cincin, gelang, kalung dan liontin custom dengan detail handmade."
-   data-en="Top Silver 925 is a sterling silver jewelry artisan based in Bandung since 2010, specializing in handcrafted custom rings, bracelets, necklaces, and pendants.">
-   Top Silver 925 adalah pengrajin perhiasan perak asli di Bandung sejak 2010...
-</p>
-</section>
-
-<section>
-<h2 class="lang" data-id="Galeri Produk" data-en="Product Gallery">Galeri Produk</h2>
-<p class="lang" data-id="Upload foto produk nanti secara manual." data-en="Product photos will be uploaded later manually.">Upload foto produk nanti secara manual.</p>
-
-<div class="gallery">
-  <div>Foto 1</div><div>Foto 2</div><div>Foto 3</div>
-  <div>Foto 4</div><div>Foto 5</div><div>Foto 6</div>
-</div>
-</section>
-
-<section>
-<h2 class="lang" data-id="Keunggulan" data-en="Advantages">Keunggulan</h2>
-<ul style="display:inline-block; text-align:left;">
-<li class="lang" data-id="Perak 925 asli" data-en="Sterling Silver 925">Perak 925 asli</li>
-<li class="lang" data-id="Ukiran detail & halus" data-en="Fine & detailed engraving">Ukiran detail & halus</li>
-<li class="lang" data-id="Bisa request ukuran & model" data-en="Custom size & design available">Bisa request ukuran & model</li>
-</ul>
-</section>
-
-
-document.getElementById("chatBubble").onclick = () =>
-  document.getElementById("chatBox").style.display =
-  document.getElementById("chatBox").style.display === "block" ? "none" : "block";
-
-const idBtn = document.getElementById("idBtn");
-const enBtn = document.getElementById("enBtn");
-
-function setLanguage(lang) {
-  document.querySelectorAll('.lang').forEach(el =>
-    el.textContent = el.getAttribute(`data-${lang}`));
-  localStorage.setItem("site-lang", lang);
-}
-
-idBtn.onclick = () => setLanguage("id");
-enBtn.onclick = () => setLanguage("en");
-
-setLanguage(localStorage.getItem("site-lang") || "id");
-</script>
-<!-- AI Assistant Floating Button -->
-<style>
-#ai-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #000;
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 50px;
-    font-size: 14px;
-    cursor: pointer;
-    z-index: 9999;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.35);
-    transition: 0.2s;
-}
-#ai-btn:hover { transform: scale(1.08); }
-
-#ai-box {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 290px;
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 14px;
-    box-shadow: 0px 6px 24px rgba(0,0,0,0.25);
-    display: none;
-    z-index: 9999;
-    font-family: sans-serif;
-}
-#ai-box button {
-    width: 100%;
-    background: #000;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin-top: 8px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-#ai-box button:hover { opacity: 0.88; }
-</style>
-
-<div id="ai-btn">AI Assist 🤖</div>
-
-<div id="ai-box">
-    <p><b>Halo! Ada yang bisa dibantu? 😊</b></p>
-    <button onclick="sendAI('ring')">Cara Ukur Cincin</button>
-    <button onclick="sendAI('bracelet')">Cara Ukur Gelang</button>
-    <button onclick="sendAI('necklace')">Cara Ukur Kalung</button>
-    <button onclick="sendAI('earring')">Cara Ukur Anting</button>
-    <button onclick="sendAI('shipping')">Info Harga Pengiriman</button>
-</div>
-
-<script>
-document.getElementById("ai-btn").onclick = function(){
-    const box = document.getElementById("ai-box");
-    box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
-};
-
-function sendAI(type){
-    const reply = {
-        ring: `Cara ukur cincin:
-1. Siapkan tali / kertas kecil.
-2. Lingkarkan pada jari yang diinginkan.
-3. Tandai titik pertemuan.
-4. Ukur panjangnya dengan penggaris (mm).
-5. Kirim hasilnya ke kami untuk konversi ukuran.
-
-In English:
-How to measure ring size:
-1. Wrap thin paper around the finger.
-2. Mark the meeting point.
-3. Measure length in mm.
-4. Send result to us.`,
-
-        bracelet: `Cara ukur gelang:
-Ukur lingkar pergelangan tangan menggunakan kertas / pita ukur.
-Tambahkan 1–2 cm untuk kenyamanan.
-
-In English:
-Measure wrist circumference and +1–2 cm for comfort.`,
-
-        necklace: `Cara pilih panjang kalung:
-40cm = pendek (leher)
-45–50cm = dada atas
-55–60cm = dada tengah
-
-In English:
-40cm = short
-45–50cm = mid
-55–60cm = long style.`,
-
-        earring: `Cara pilih ukuran anting:
-Tentukan diameter berdasarkan bentuk wajah & kenyamanan.
-Untuk daily wear direkomendasikan 8–14mm.
-
-In English:
-Choose diameter based on comfort. Daily use: 8–14mm.`,
-
-        shipping: `Estimasi Ongkir:
-• Indonesia (JNE / J&T / POS): 8rb – 30rb tergantung kota.
-• Internasional (EMS / DHL): 150rb – 450rb tergantung negara.
-
-In English:
-Domestic shipping: 8K–30K.
-International: 150K–450K.`
-    };
-
-    window.open("https://wa.me/628132022201?text=" + encodeURIComponent(reply[type]), "_blank");
-}
-</script>
-  <!-- Floating Measure Button -->
-<div id="measure-btn">Panduan Ukur 📏</div>
-
-<!-- Panel Panduan -->
-<div id="measure-panel">
+  </style>
+</head>
+<body><header>
+  <h1>Top Silver 925</h1>
+  <p>Custom Nama • Cincin • Gelang • Kalung • Anting</p>
+</header><section>
+  <h2>Tentang Kami</h2>
+  <p>Kami adalah pengrajin perhiasan perak 925 berkualitas dengan desain custom nama.
+  Pengerjaan detail, elegan, dan bisa request model.</p>  <h2>Hubungi Whatsapp</h2>
+  <p><b>08132022201</b></p>
+</section><!-- Floating Button --><div id="measure-btn">Panduan Ukur 📏</div><!-- Floating Panel --><div id="measure-panel">
   <h3>Panduan Ukuran</h3>
-
-  <p><b>Cara Ukur Cincin:</b><br>
-  Gunakan cincin yang biasa dipakai → ukur <u>diameter bagian dalam</u> dengan penggaris.</p>
-
-  <p><b>Cara Ukur Gelang:</b><br>
-  Ukur lingkar pergelangan tangan pakai benang / tembaga → ukur panjangnya dengan penggaris.</p>
-
-  <p><b>Cara Ukur Kalung:</b><br>
-  Tentukan panjang rantai sesuai preferensi: 45cm, 50cm, 55cm, dst.</p>
-
-  <p><b>Cara Ukur Anting:</b><br>
-  Tentukan diameter lingkar yang nyaman dipakai (misal 1cm, 1.5cm, 2cm).</p>
-
-  <p><b>Ongkir:</b><br>
-  JNE / JNT / POS — Tarif mengikuti kota tujuan.</p>
-</div>
-
-<!-- Floating Measure Button -->
-<div id="measure-btn">Panduan Ukur 📏</div>
-
-<!-- Panel Panduan -->
-<div id="measure-panel">
-  <h3>Panduan Ukuran</h3>
-
-  <p><b>Cara Ukur Cincin:</b><br>
-  Gunakan cincin yang biasa dipakai → ukur <u>diameter bagian dalam</u> dengan penggaris.</p>
-
-  <p><b>Cara Ukur Gelang:</b><br>
-  Ukur lingkar pergelangan tangan pakai benang / tembaga → ukur panjangnya dengan penggaris.</p>
-
-  <p><b>Cara Ukur Kalung:</b><br>
-  Tentukan panjang rantai sesuai preferensi: 45cm, 50cm, 55cm, dst.</p>
-
-  <p><b>Cara Ukur Anting:</b><br>
-  Tentukan diameter lingkar yang nyaman dipakai (misal 1cm, 1.5cm, 2cm).</p>
-
-  <p><b>Ongkir:</b><br>
-  JNE / JNT / POS — Tarif mengikuti kota tujuan.</p>
-</div>
-
-<script>
-document.getElementById("measure-btn").addEventListener("click", function() {
-  document.getElementById("measure-panel").classList.toggle("open");
-});
-</script>
-  ...
-</section>
-
-<!-- TEMPATKAN SCRIPT DI SINI -->
-<script>
+  <p><b>Cara Ukur Cincin:</b><br>Gunakan cincin yang biasa dipakai → ukur diameter dalam.</p>
+  <p><b>Cara Ukur Gelang:</b><br>Ukur lingkar pergelangan memakai meteran / benang.</p>
+  <p><b>Cara Ukur Kalung:</b><br>Pilih panjang favorit: 45cm, 50cm, 55cm.</p>
+  <p><b>Cara Ukur Anting:</b><br>Pilih diameter yang nyaman.</p>
+  <p><b>Ongkir:</b><br>JNE / JNT / POS mengikuti kota tujuan.</p>
+</div><script>
   const btn = document.getElementById("measure-btn");
   const panel = document.getElementById("measure-panel");
 
   btn.addEventListener("click", () => {
     panel.style.display = (panel.style.display === "block") ? "none" : "block";
   });
-</script>
-
-</body>
+</script><footer>
+  © 2025 Top Silver 925
+</footer></body>
 </html>
