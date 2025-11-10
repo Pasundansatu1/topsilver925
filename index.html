@@ -1,87 +1,148 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Top Silver 925</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f8f8f8;
-      color: #222;
-    }header {
-  background: #222;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
+      line-height: 1.6;
+      background: #ffffff;
+      color: #333;
+      text-align: center;
+    }
 
-section {
-  padding: 20px;
-  max-width: 700px;
-  margin: auto;
-}
+    header {
+      padding: 20px;
+    }
 
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
+    header img {
+      width: 140px;
+      display: block;
+      margin: 0 auto;
+    }
 
-#measure-btn {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  background: #222;
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 30px;
-  font-size: 14px;
-  cursor: pointer;
-  z-index: 9999;
-}
+    .lang-switch {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      display: flex;
+      gap: 8px;
+    }
+    .lang-switch img {
+      width: 35px;
+      padding: 6px;
+      background: #eee;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
-#measure-panel {
-  display: none;
-  position: fixed;
-  right: 15px;
-  bottom: 60px;
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 12px;
-  border-radius: 8px;
-  width: 260px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
-  z-index: 9999;
-}
+    section {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
 
+    .button-wa {
+      display: inline-block;
+      background: black;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .gallery div {
+      background: #eee;
+      padding: 45px 0;
+      border-radius: 12px;
+      font-size: 16px;
+      color: #666;
+    }
   </style>
 </head>
-<body><header>
-  <h1>Top Silver 925</h1>
-  <p>Custom Nama • Cincin • Gelang • Kalung • Anting</p>
-</header><section>
-  <h2>Tentang Kami</h2>
-  <p>Kami adalah pengrajin perhiasan perak 925 berkualitas dengan desain custom nama.
-  Pengerjaan detail, elegan, dan bisa request model.</p>  <h2>Hubungi Whatsapp</h2>
-  <p><b>08132022201</b></p>
-</section><!-- Floating Button --><div id="measure-btn">Panduan Ukur 📏</div><!-- Floating Panel --><div id="measure-panel">
-  <h3>Panduan Ukuran</h3>
-  <p><b>Cara Ukur Cincin:</b><br>Gunakan cincin yang biasa dipakai → ukur diameter dalam.</p>
-  <p><b>Cara Ukur Gelang:</b><br>Ukur lingkar pergelangan memakai meteran / benang.</p>
-  <p><b>Cara Ukur Kalung:</b><br>Pilih panjang favorit: 45cm, 50cm, 55cm.</p>
-  <p><b>Cara Ukur Anting:</b><br>Pilih diameter yang nyaman.</p>
-  <p><b>Ongkir:</b><br>JNE / JNT / POS mengikuti kota tujuan.</p>
-</div><script>
-  const btn = document.getElementById("measure-btn");
-  const panel = document.getElementById("measure-panel");
 
-  btn.addEventListener("click", () => {
-    panel.style.display = (panel.style.display === "block") ? "none" : "block";
-  });
-</script><footer>
-  © 2025 Top Silver 925
-</footer></body>
+<body>
+
+<header>
+  <div class="lang-switch">
+    <img src="https://flagcdn.com/w20/id.png" id="id-btn">
+    <img src="https://flagcdn.com/w20/us.png" id="en-btn">
+  </div>
+
+  <img src="logo.png" alt="Logo Top Silver">
+  <h1 id="title">Top Silver 925</h1>
+  <p id="subtitle">Custom Nama • Cincin Tunangan • Kalung • Gelang • Handmade Artisan</p>
+  <a href="https://wa.me/628132022201?text=Halo%20Top%20Silver%20925" class="button-wa" id="chatbtn">Chat via WhatsApp</a>
+</header>
+
+<section>
+  <h2 id="about-title">Tentang Kami</h2>
+  <p id="about-desc">
+    Top Silver 925 adalah pengrajin perhiasan perak asli... Kami menerima pembuatan desain sesuai permintaan...
+  </p>
+  <ul style="text-align:left; max-width:600px; margin:auto;">
+    <li id="point1">Bisa custom nama / logo / desain bebas</li>
+    <li id="point2">Bahan perak asli 925 (sterling silver)</li>
+    <li id="point3">Harga langsung pengrajin</li>
+    <li id="point4">Pengerjaan rapi handmade dan presisi</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="gallery-title">Galeri Produk</h2>
+  <p id="gallery-desc">Upload foto produk nanti secara manual.</p>
+
+  <div class="gallery">
+    <div>Foto 1</div><div>Foto 2</div><div>Foto 3</div>
+    <div>Foto 4</div><div>Foto 5</div><div>Foto 6</div>
+  </div>
+</section>
+
+<section>
+  <h2 id="keunggulan-title">Keunggulan</h2>
+  <ul style="text-align:left; max-width:600px; margin:auto;">
+    <li id="adv1">Perak 925 asli</li>
+    <li id="adv2">Ukiran detail & halus</li>
+    <li id="adv3">Bisa request ukuran & model</li>
+  </ul>
+</section>
+
+<script>
+document.getElementById("en-btn").onclick = function() {
+  document.getElementById("title").innerText = "Top Silver 925";
+  document.getElementById("subtitle").innerText = "Custom Name • Engagement Rings • Necklaces • Bracelets • Handmade Artisan";
+  document.getElementById("chatbtn").innerText = "Chat via WhatsApp";
+  document.getElementById("about-title").innerText = "About Us";
+  document.getElementById("about-desc").innerText = "Top Silver 925 is a handmade silver jewelry craftsman...";
+  document.getElementById("point1").innerText = "Can custom name / logo / design";
+  document.getElementById("point2").innerText = "Material: Original 925 Sterling Silver";
+  document.getElementById("point3").innerText = "Direct artisan price";
+  document.getElementById("point4").innerText = "Handcrafted with precision";
+  document.getElementById("gallery-title").innerText = "Product Gallery";
+  document.getElementById("gallery-desc").innerText = "Upload product photos manually later.";
+  document.getElementById("keunggulan-title").innerText = "Advantages";
+  document.getElementById("adv1").innerText = "Original 925 Silver";
+  document.getElementById("adv2").innerText = "Detailed & smooth engraving";
+  document.getElementById("adv3").innerText = "Custom size & model";
+};
+
+document.getElementById("id-btn").onclick = function() {
+  location.reload(); // kembali ke bahasa Indonesia
+};
+</script>
+
+</body>
 </html>
