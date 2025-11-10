@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Top Silver 925</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,6 +18,7 @@
 
     header {
       padding: 20px;
+      position: relative;
     }
 
     header img {
@@ -31,44 +33,8 @@
       top: 15px;
       display: flex;
       gap: 8px;
-    }/* Floating AI Help */
-#ai-help-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #111;
-  color: #fff;
-  border-radius: 50px;
-  padding: 12px 18px;
-  font-size: 15px;
-  cursor: pointer;
-  z-index: 9999;
-}
+    }
 
-#ai-help-box {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 260px;
-  background: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.25);
-  text-align: left;
-  display: none;
-  z-index: 9999;
-}
-
-#ai-help-box button {
-  width: 100%;
-  margin-top: 8px;
-  padding: 8px;
-  background: #111;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
     .lang-switch img {
       width: 35px;
       padding: 6px;
@@ -106,14 +72,51 @@
       padding: 45px 0;
       border-radius: 12px;
       font-size: 16px;
-      color: }
+      color: #555;
+    }
 
+    /* Floating AI Help */
+    #ai-help-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #111;
+      color: #fff;
+      border-radius: 50px;
+      padding: 12px 18px;
+      font-size: 15px;
+      cursor: pointer;
+      z-index: 9999;
+    }
 
+    #ai-help-box {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 260px;
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.25);
+      text-align: left;
+      display: none;
+      z-index: 9999;
+    }
 
+    #ai-help-box button {
+      width: 100%;
+      margin-top: 8px;
+      padding: 8px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
 
-
-
-
+<body>
 
 <header>
   <div class="lang-switch">
@@ -121,7 +124,7 @@
     <img src="https://flagcdn.com/w20/us.png" id="en-btn">
   </div>
 
-  <img src="site.png" alt=""></img>
+  <img src="site.png" alt="">
   <h1 id="title">Top Silver 925</h1>
   <p id="subtitle">Custom Nama • Cincin Tunangan • Kalung • Gelang • Handmade Artisan</p>
   <a href="https://wa.me/628132022201?text=Halo%20Top%20Silver%20925" class="button-wa" id="chatbtn">Chat via WhatsApp</a>
@@ -159,7 +162,23 @@
   </ul>
 </section>
 
+<!-- Floating AI -->
+<div id="ai-help-btn">Panduan 📌</div>
+
+<div id="ai-help-box">
+  <h4>Panduan Ukuran & Pengiriman</h4>
+  <button onclick="window.open('https://www.google.com/search?q=cara+ukur+diameter+cincin','_blank')">Cara Ukur Cincin</button>
+  <button onclick="window.open('https://www.google.com/search?q=cara+ukur+diameter+gelang','_blank')">Cara Ukur Gelang</button>
+  <button onclick="window.open('https://www.google.com/search?q=cara+ukur+anting','_blank')">Cara Ukur Anting</button>
+  <button onclick="window.open('https://cek-ongkir.com','_blank')">Cek Ongkir</button>
+</div>
+
 <script>
+document.getElementById("ai-help-btn").onclick = function() {
+  const box = document.getElementById("ai-help-box");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+};
+
 document.getElementById("en-btn").onclick = function() {
   document.getElementById("title").innerText = "Top Silver 925";
   document.getElementById("subtitle").innerText = "Custom Name • Engagement Rings • Necklaces • Bracelets • Handmade Artisan";
@@ -179,43 +198,9 @@ document.getElementById("en-btn").onclick = function() {
 };
 
 document.getElementById("id-btn").onclick = function() {
-  location.reload(); // kembali ke bahasa Indonesia
-};
-</script>
-<!-- AI Floating Help -->
-<div id="ai-help-btn">Panduan 📌</div>
-
-<div id="ai-help-box">
-  <h4>Panduan Ukuran & Pengiriman</h4>
-
-  <button onclick="window.open('https://www.google.com/search?q=cara+ukur+diameter+cincin','_blank')">
-    Cara Ukur Cincin
-  </button>
-
-  <button onclick="window.open('https://www.google.com/search?q=cara+ukur+diameter+gelang','_blank')">
-    Cara Ukur Gelang
-  </button>
-
-  <button onclick="window.open('https://www.google.com/search?q=cara+ukur+anting','_blank')">
-    Cara Ukur Anting
-  </button>
-
-<button onclick="window.open('https://...')">
-  Cek Ongkir Dalam & Luar Negeri
-</button>
-</div> <!-- Penutup #ai-help-box -->
-
-<script>
-document.getElementById("ai-help-btn").onclick = function() {
-  const box = document.getElementById("ai-help-box");
-  if (box.style.display === "none" || box.style.display === "") {
-      box.style.display = "block";
-  } else {
-      box.style.display = "none";
-  }
+  location.reload();
 };
 </script>
 
 </body>
 </html>
-
