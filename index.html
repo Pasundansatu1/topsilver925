@@ -60,6 +60,47 @@ header {
 header img {
   max-width: 130px;
 }
+
+/* Popup Panduan Ukuran */
+#guide-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#guide-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+}
+
+#guide-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#guide-box button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -113,11 +154,37 @@ header img {
   </ul>
 </section>
 
+<!-- Tombol Panduan Ukuran -->
+<section>
+  <a href="#" onclick="openGuidePopup()" 
+     style="display:inline-block;margin-top:12px;padding:10px 18px;background:#000;color:#fff;border-radius:6px;text-decoration:none;">
+     <span data-lang="guidebtn">Panduan Ukuran 📏</span>
+  </a>
+</section>
+
+<!-- POPUP PANDUAN -->
+<div id="guide-popup">
+  <div id="guide-box">
+    <span id="guide-close" onclick="closeGuidePopup()">×</span>
+    <h3 data-lang="guideTitle">Panduan Ukuran Perhiasan</h3>
+    <p data-lang="guideIntro">Gunakan kawat atau kabel tembaga untuk membuat lingkar, lalu ukur dengan penggaris.</p>
+
+    <button onclick="showDetail('cincin')"><span data-lang="ringBtn">Cara Mengukur Cincin 💍</span></button>
+    <button onclick="showDetail('gelang')"><span data-lang="braceletBtn">Cara Mengukur Gelang 🔗</span></button>
+    <button onclick="showDetail('kalung')"><span data-lang="necklaceBtn">Cara Mengukur Kalung 📿</span></button>
+    <button onclick="showDetail('anting')"><span data-lang="earringBtn">Cara Memilih Ukuran Anting 🟣</span></button>
+
+    <p id="detail-text" style="margin-top:15px;font-size:14px;color:#333;"></p>
+  </div>
+</div>
+
 <footer style="padding:20px;background:#f1f1f1;margin-top:35px;">
   <p data-lang="footer">Top Silver 925 • Pengrajin Perhiasan Custom</p>
 </footer>
 
 <script>
+let currentLang = 'id'; // bahasa default
+
 const langText = {
   id: {
     title: "Top Silver 925",
@@ -136,12 +203,18 @@ const langText = {
     a2: "Perak dijamin asli 925",
     a3: "Harga tanpa perantara",
     a4: "Garansi perbaikan finishing",
-    footer: "Top Silver 925, Bandung,jawa barat"
+    footer: "Top Silver 925, Bandung, Jawa Barat",
+    guidebtn: "Panduan Ukuran 📏",
+    guideTitle: "Panduan Ukuran Perhiasan",
+    guideIntro: "Gunakan kawat atau kabel tembaga untuk membuat lingkar, lalu ukur dengan penggaris.",
+    ringBtn: "Cara Mengukur Cincin 💍",
+    braceletBtn: "Cara Mengukur Gelang 🔗",
+    necklaceBtn: "Cara Mengukur Kalung 📿",
+    earringBtn: "Cara Memilih Ukuran Anting 🟣"
   },
-
   en: {
     title: "Top Silver 925",
-    tagline: "Custom Name • Rings • Bracelets • Pendants • Earings",
+    tagline: "Custom Name • Rings • Bracelets • Pendants • Earrings",
     chatbtn: "Chat on WhatsApp",
     about: "About Us",
     aboutdesc: "Top Silver 925 is a pure sterling silver jewelry craftsman with premium quality and detailed finishing.",
@@ -156,82 +229,28 @@ const langText = {
     a2: "Guaranteed genuine 925 silver",
     a3: "Honest pricing with no middleman",
     a4: "Finishing repair warranty",
-    footer: "Top Silver 925 • Bandung, west java"
+    footer: "Top Silver 925 • Bandung, West Java",
+    guidebtn: "Jewelry Size Guide 📏",
+    guideTitle: "Jewelry Size Guide",
+    guideIntro: "Use wire or copper cable to make a circle, then measure it with a ruler.",
+    ringBtn: "How to Measure Ring 💍",
+    braceletBtn: "How to Measure Bracelet 🔗",
+    necklaceBtn: "How to Measure Necklace 📿",
+    earringBtn: "How to Choose Earring Size 🟣"
   }
 };
 
 function setLanguage(lang) {
+  currentLang = lang;
   document.querySelectorAll("[data-lang]").forEach(el => {
-    el.innerText = langText[lang][el.getAttribute("data-lang")];
+    const key = el.getAttribute("data-lang");
+    if (langText[lang][key]) {
+      el.innerText = langText[lang][key];
+    }
   });
 }
-</script>
-<!-- Tombol Panduan Ukuran -->
-<br>
-<a href="#" onclick="openGuidePopup()" 
-   style="display:inline-block;margin-top:12px;padding:10px 18px;background:#000;color:#fff;border-radius:6px;text-decoration:none;">
-   <span data-lang="guidebtn">Panduan Ukuran 📏</span>
-</a>
 
-<!-- POPUP PANDUAN -->
-<div id="guide-popup">
-  <div id="guide-box">
-    <span id="guide-close" onclick="closeGuidePopup()">×</span>
-    <h3 data-lang="guideTitle">Panduan Ukuran Perhiasan</h3>
-    <p data-lang="guideIntro">Gunakan kawat atau kabel tembaga untuk membuat lingkar, lalu ukur dengan penggaris.</p>
-
-    <button onclick="showDetail('cincin')"><span data-lang="ringBtn">Cara Mengukur Cincin 💍</span></button>
-    <button onclick="showDetail('gelang')"><span data-lang="braceletBtn">Cara Mengukur Gelang 🔗</span></button>
-    <button onclick="showDetail('kalung')"><span data-lang="necklaceBtn">Cara Mengukur Kalung 📿</span></button>
-    <button onclick="showDetail('anting')"><span data-lang="earringBtn">Cara Memilih Ukuran Anting 🟣</span></button>
-
-    <p id="detail-text" style="margin-top:15px;font-size:14px;color:#333;"></p>
-  </div>
-</div>
-
-<style>
-#guide-popup {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#guide-box {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  width: 320px;
-  text-align: center;
-  position: relative;
-}
-
-#guide-close {
-  position: absolute;
-  top: 6px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-#guide-box button {
-  display: block;
-  width: 100%;
-  margin: 8px 0;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: black;
-  color: white;
-  cursor: pointer;
-}
-</style>
-
-<script>
+// POPUP
 function openGuidePopup() {
   document.getElementById("guide-popup").style.display = "flex";
 }
@@ -242,8 +261,7 @@ function closeGuidePopup() {
 }
 
 function showDetail(type) {
-  const lang = currentLang || 'id';
-  let text = {
+  const text = {
     id: {
       cincin: "Gunakan cincin yang sudah pas → ukur diameter bagian dalam (kiri ke kanan). Atau buat lingkar dari kawat sesuai jari lalu ukur diameternya.",
       gelang: "Buat lingkar dari kawat sesuai pergelangan. Ukur diameter kiri-kanan & atas-bawah, pilih ukuran terdekat.",
@@ -252,47 +270,16 @@ function showDetail(type) {
     },
     en: {
       cincin: "Use a ring that fits well → measure the inner diameter (left to right). Or shape a wire circle to match your finger and measure the diameter.",
-      gelang: "Form a wire circle around your wrist. Measure the width across and top-to-bottom, then choose the closest size.",
+      gelang: "Form a wire circle around your wrist. Measure across width and height, then choose the closest size.",
       kalung: "Measure the total necklace length from end to end using a ruler or measuring tape.",
       anting: "Choose earring diameter for comfort. Larger diameter = looser fit, smaller diameter = tighter fit."
     }
   };
-
-  document.getElementById("detail-text").innerText = text[lang][type];
+  document.getElementById("detail-text").innerText = text[currentLang][type];
 }
 
-// Tambah integrasi bahasa agar popup ikut berubah
-let currentLang = 'id';
-function setLanguage(lang) {
-  currentLang = lang;
-  document.querySelectorAll("[data-lang]").forEach(el => {
-    if (langText[lang] && langText[lang][el.getAttribute("data-lang")]) {
-      el.innerText = langText[lang][el.getAttribute("data-lang")];
-    }
-  });
-}
-
-const langText = {
-  id: {
-    guidebtn: "Panduan Ukuran 📏",
-    guideTitle: "Panduan Ukuran Perhiasan",
-    guideIntro: "Gunakan kawat atau kabel tembaga untuk membuat lingkar, lalu ukur dengan penggaris.",
-    ringBtn: "Cara Mengukur Cincin 💍",
-    braceletBtn: "Cara Mengukur Gelang 🔗",
-    necklaceBtn: "Cara Mengukur Kalung 📿",
-    earringBtn: "Cara Memilih Ukuran Anting 🟣"
-  },
-  en: {
-    guidebtn: "Jewelry Size Guide 📏",
-    guideTitle: "Jewelry Size Guide",
-    guideIntro: "Use wire or copper cable to make a circle, then measure it with a ruler.",
-    ringBtn: "How to Measure Ring 💍",
-    braceletBtn: "How to Measure Bracelet 🔗",
-    necklaceBtn: "How to Measure Necklace 📿",
-    earringBtn: "How to Choose Earring Size 🟣"
-  }
-};
-setLanguage('id'); // Set bahasa default ke Indonesia
+// Set default ke Indonesia
+setLanguage('id');
 </script>
 </body>
 </html>
