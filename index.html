@@ -1,4 +1,128 @@
-    
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Silver 925</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+.banner {
+  position: relative;
+}
+.banner img {
+  width: 100%;
+  display: block;
+}
+.banner-buttons {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  gap: 10px;
+}
+.language-switch {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 8px;
+}
+button, .link-btn {
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover, .link-btn:hover {
+  background-color: #eee;
+}
+.logo {
+  display: block;
+  margin: 15px auto;
+  max-width: 120px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+.gallery video {
+  width: 100%;
+  border-radius: 10px;
+}
+.measurement {
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+  padding: 10px;
+}
+.measurement button {
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- Banner -->
+<section class="banner">
+  <img src="banner.jpg" alt="Banner Top Silver 925">
+  <div class="banner-buttons">
+    <a href="https://cekresi.com" target="_blank" class="link-btn">📦 Paket Dalam Negeri</a>
+    <a href="https://parcelsapp.com/id" target="_blank" class="link-btn">🌍 Paket Luar Negeri</a>
+  </div>
+  <div class="language-switch">
+    <button onclick="setLanguage('id')">ID</button>
+    <button onclick="setLanguage('en')">EN</button>
+  </div>
+</section>
+
+<!-- Logo -->
+<img src="site.png" alt="Top Silver Logo" class="logo">
+
+<!-- Video Gallery -->
+<section class="gallery">
+  <video src="video1.mp4" autoplay loop muted playsinline></video>
+  <video src="video2.mp4" autoplay loop muted playsinline></video>
+  <video src="Video4.mp4" autoplay loop muted playsinline></video>
+  <video src="Video5.mp4" autoplay loop muted playsinline></video>
+</section>
+
+<!-- Pengukuran -->
+<section class="measurement">
+  <h3>Pengukuran Perhiasan</h3>
+  <p><b>Cincin:</b> Pakai kawat/tembaga, lingkarkan di jari atau cincin lama, lalu ukur diameter dengan penggaris.</p>
+  <button>Ukur Cincin</button>
+  <p><b>Gelang:</b> Pakai kawat/tembaga, lingkarkan pergelangan, ukur diameter kanan ke kiri dan atas ke bawah.</p>
+  <button>Ukur Gelang</button>
+  <p><b>Anting & Liontin:</b> Samakan dengan ukuran gelang.</p>
+  <button>Ukur Anting/Liontin</button>
+  <p><b>Kalung:</b> Pakai kawat/tembaga ukur panjang keseluruhan dengan penggaris.</p>
+  <button>Ukur Kalung</button>
+</section>
+
+<script>
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
+  if (lang === 'id') {
+    alert('Bahasa Indonesia aktif');
+  } else {
+    alert('English language active');
+  }
+}
+</script>
+
+</body>
+</html>    
     
     
     
