@@ -224,6 +224,88 @@
 
   <img src="site.png" alt="Top Silver Logo">
   <h1 data-lang="title">Top Silver 925</h1>
+  <!-- Tombol Bahasa -->
+<div class="language-switch">
+  <button id="lang-id" class="lang-btn active">Ind</button>
+  <button id="lang-en" class="lang-btn">En</button>
+</div>
+
+<style>
+.language-switch {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 60;
+  background: rgba(255,255,255,0.85);
+  padding: 6px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  color: #222;
+  padding: 4px 8px;
+}
+.lang-btn.active {
+  background: #eaeaea;
+  border-radius: 6px;
+}
+.lang-btn:hover {
+  background: #f2f2f2;
+}
+</style>
+
+<script>
+const content = {
+  id: {
+    title: "Top Silver 925 - Perhiasan Perak Handmade",
+    description: "Perhiasan perak murni berkualitas tinggi dari pengrajin profesional di Indonesia.",
+    measure: "Panduan Ukur",
+    ring: "Ukur Cincin: pakai kawat/tembaga lingkarkan di jari lalu ukur diameter dengan penggaris.",
+    bracelet: "Ukur Gelang: pakai kawat/tembaga lingkarkan dan ukur diameter kanan-kiri, atas-bawah.",
+    earring: "Ukur Anting: disamakan dengan ukuran gelang.",
+    pendant: "Ukur Liontin: disamakan dengan ukuran gelang.",
+    necklace: "Ukur Kalung: pakai kawat/tembaga ukur panjang dengan penggaris."
+  },
+  en: {
+    title: "Top Silver 925 - Handmade Silver Jewelry",
+    description: "High-quality pure silver jewelry crafted by professional artisans in Indonesia.",
+    measure: "Measurement Guide",
+    ring: "Ring: use copper wire, wrap around your finger, measure diameter with a ruler.",
+    bracelet: "Bracelet: use wire, wrap around wrist, measure diameter horizontally and vertically.",
+    earring: "Earrings: same as bracelet measurement.",
+    pendant: "Pendant: same as bracelet measurement.",
+    necklace: "Necklace: use wire, measure total length with a ruler."
+  }
+};
+
+const idBtn = document.getElementById('lang-id');
+const enBtn = document.getElementById('lang-en');
+
+idBtn.addEventListener('click', () => switchLang('id'));
+enBtn.addEventListener('click', () => switchLang('en'));
+
+function switchLang(lang) {
+  document.querySelector('title').innerText = content[lang].title;
+  document.querySelector('meta[name="description"]').setAttribute('content', content[lang].description);
+
+  // Ubah teks panduan ukur
+  document.getElementById('measure-title').innerText = content[lang].measure;
+  document.getElementById('ring-text').innerText = content[lang].ring;
+  document.getElementById('bracelet-text').innerText = content[lang].bracelet;
+  document.getElementById('earring-text').innerText = content[lang].earring;
+  document.getElementById('pendant-text').innerText = content[lang].pendant;
+  document.getElementById('necklace-text').innerText = content[lang].necklace;
+
+  // Ubah tombol aktif
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(`lang-${lang}`).classList.add('active');
+}
+</script>
   <p data-lang="tagline">Custom Nama • Cincin • Gelang • Liontin • Anting</p>
 
   <a href="https://wa.me/628132022201?t=Halo%2C%20saya%20ingin%20pesan%20custom%20perhiasan"
