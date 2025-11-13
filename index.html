@@ -1,6 +1,62 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <!-- Paket Kurir Style -->
+<style>
+.courier-links {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 60;
+  background: rgba(255,255,255,0.85);
+  padding: 6px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-size: 13px;
+}
+
+.courier-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #111;
+  padding: 5px 7px;
+  border-radius: 6px;
+  transition: background .18s, transform .12s;
+  background: transparent;
+}
+
+.courier-btn:hover {
+  background: #f3f3f3;
+  transform: translateY(-1px);
+}
+
+.box-icon {
+  display: inline-block;
+  color: #111;
+}
+
+.courier-text {
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+.courier-sep {
+  color: #888;
+  font-weight: 600;
+}
+
+/* Responsif: layar kecil hanya tampil ikon */
+@media (max-width: 420px) {
+  .courier-text { display: none; }
+  .courier-sep { display: none; }
+  .courier-links { padding: 5px 6px; }
+}
+</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tren Perhiasan 925 | Top Silver 925 | Toko Perhiasan Perak Elegan & Modern di Indonesia</title>
