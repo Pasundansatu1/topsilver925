@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /Verifikasi
+Disallow: /Video4.mp4
+Disallow: /Video5.mp4
+Disallow: /video1.mp4
+
+Sitemap: https://trenperhiasan.github.io/topsilver925/sitemap.xml
